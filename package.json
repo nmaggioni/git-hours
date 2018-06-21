@@ -29,7 +29,8 @@
     "commander": "^2.2.0",
     "lodash": "^4.17.5",
     "moment": "^2.10.6",
-    "nodegit": "^0.16.0"
+    "nodegit": "^0.16.0",
+    "snyk": "^1.83.0"
   },
   "devDependencies": {
     "eslint": "^1.5.1",
@@ -41,6 +42,9 @@
     "ci": "./tools/ci.sh",
     "test": "mocha",
     "eslint": "eslint --ext .js ./src ./test",
-    "jscs": "jscs ./src ./test"
-  }
+    "jscs": "jscs ./src ./test",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
+  },
+  "snyk": true
 }
